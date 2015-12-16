@@ -1459,6 +1459,11 @@ table {
   padding-right: 1.25rem;
 }
 
+.link {
+  border-bottom: 1px solid;
+  border-color: #979797;
+}
+
 .center {
   text-align: center;
 }
@@ -1547,7 +1552,6 @@ table {
 .description {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  height: 7.375rem;
   opacity: 0.8;
 }
 
@@ -1725,7 +1729,7 @@ table {
 }
 
 .ticket__content {
-  padding: 16px 16px 16px 250px;
+  padding: 24px 16px 16px 250px;
 }
 
 .ticket__info {
@@ -1746,6 +1750,7 @@ table {
 
 .ticket .description {
   overflow: hidden;
+  height: 6.875rem;
 }
 
 .ticket .button {

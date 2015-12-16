@@ -196,6 +196,10 @@ table
 	padding-left: $global-content-side-padding
 	padding-right: $global-content-side-padding
 
+.link
+	border-bottom: 1px solid
+	border-color: $dimGray
+
 .center
 	text-align: center
 
@@ -262,7 +266,6 @@ table
 .description
 	font-size: rem(13px)
 	line-height: rem(18px)
-	height: rem(118px)
 	opacity: 0.8
 
 .date
@@ -400,7 +403,7 @@ $ticket-border-color: $gray
 		margin-bottom: rem(16px)
 
 	&__content
-		padding: 16px 16px 16px 250px
+		padding: 24px 16px 16px 250px
 
 	&__info
 		line-height: rem(34px)
@@ -417,6 +420,7 @@ $ticket-border-color: $gray
 
 	.description
 		overflow: hidden
+		height: rem(110px)
 
 	.button
 		float: right
@@ -428,7 +432,6 @@ $ticket-border-color: $gray
 	position: relative
 	border-left: 1px dashed #AFAFAF
 	flex: 0 0 52px
-
 
 	&::before,
 	&::after
@@ -463,8 +466,6 @@ $ticket-border-color: $gray
 		left: -230%
 		transform: rotate(-90deg) translateX(-50%)
 		font-size: rem(12px)
-
-		// +debug
 
 	&__val
 		font-size: rem(19px)

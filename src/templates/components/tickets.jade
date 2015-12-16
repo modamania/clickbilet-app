@@ -1,6 +1,6 @@
 // all tickets variant
 mixin ticket(headline, description)
-	section.ticket(class!=attributes.class, style!=attributes.style)
+	article.ticket(class!=attributes.class, style!=attributes.style)
 		a(href='event.html')
 			.ticket__content
 				span.label Концерт
