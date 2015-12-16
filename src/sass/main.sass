@@ -1,0 +1,572 @@
+@import partials/grid/grid-settings
+@import partials/grid/grid
+
+// Debug mixin
+=debug($color: aqua)
+  border: 1px solid $color
+.debug
+  +debug
+
+// @Utils
+
+// Convert px to rem
+// expample: width: rem(10px)
+@function rem($size)
+  $remSize: $size / 16px
+  @return #{$remSize}rem
+
+// @Vars
+$global-content-width: rem(1010px)
+$global-content-side-padding: rem(20px)
+
+$global-font-size: 100%
+$base-line-height: 1.5
+
+$global-spacing: rem(24px)
+
+// Colors
+$white: #FFFFFF
+$black: #000000
+$lightGray: #F2F2F2
+$gray: #CDCDCD
+$dimGray: #979797
+
+
+// Fonts
+$sans-serif: Roboto, 'Helvetica Neue', 'Arial', sans-serif
+
+// Body settings
+$body-background: $black
+$body-font-color: $white
+$body-font-family: $sans-serif
+
+$global-radius: 3px
+
+// Elements
+$linkColor: #00BFFF
+
+// @Mixins
+=radius($radius: $global-radius)
+	@if $radius
+		border-radius: $radius
+
+=side-radius($side, $radius:$global-radius)
+	@if ($side == left or $side == right)
+		border-bottom-#{$side}-radius: $radius
+		border-top-#{$side}-radius: $radius
+	else
+		border-#{$side}-left-radius: $radius
+		border-#{$side}-right-radius: $radius
+
+=clearfix
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+=translate2d($horizontal:0, $vertical:0)
+	transform: translate($horizontal, $vertical)
+
+=invisible
+	position: absolute !important
+	width: 1px
+	height: 1px
+	overflow: hidden
+	clip: rect(0, 0, 0, 0)
+
+=button
+	-webkit-appearance: none
+	-moz-appearance: none
+	background: transparent
+	padding: 0
+	margin: 0
+	border: 0
+	border-radius: $global-radius
+	line-height: 1
+
+
+// Typography setings
+
+.h2
+	font-size: rem(22px)
+	margin-bottom: rem(8px)
+
+// Defauls
+*,
+*:before,
+*:after
+	box-sizing: border-box
+
+html,
+body
+	font-size: $global-font-size
+	min-width: 980px
+
+body
+  background: $body-background
+  color: $body-font-color
+  font-family: $body-font-family
+  line-height: $base-line-height
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+a:hover
+	cursor: pointer
+
+img
+	max-width: 100%
+	height: auto
+	-ms-interpolation-mode: bicubic
+	display: inline-block
+	vertical-align: middle
+
+button
+  +button
+  &:disabled
+    opacity: 0.3
+
+// Reset
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td
+	margin: 0
+	padding: 0
+
+p
+	font-size: inherit
+	line-height: 1.6
+	margin-bottom: $global-spacing
+	text-rendering: optimizeLegibility
+
+	+ h1, + h2, + h3, + h4, + h5, + h6
+		margin-top: $global-spacing
+
+em, i
+	font-style: italic
+	line-height: inherit
+
+strong, b
+	font-size: bold
+	line-height: inherit
+
+h1, h2, h3, h4, h5, h6
+	font-family: $sans-serif
+	font-weight: bold
+	font-style: normal
+	color: inherit
+	text-rendering: optimizeLegibility
+	margin-top: 0
+	margin-bottom: ( $global-spacing/2 )
+	line-height: 1.4
+
+a
+	color: inherit
+	text-decoration: none
+	line-height: inherit
+	cursor: pointer
+	transition: all 0.3s ease-out
+
+	img
+		border: 0
+
+
+table
+  width: 100%
+
+// @Helpers
+.wrapper
+	max-width: $global-content-width
+	margin: 0 auto
+	padding-left: $global-content-side-padding
+	padding-right: $global-content-side-padding
+
+.center
+  text-align: center
+
+.right
+  text-align: right
+
+.hidden
+  display: none
+
+// @Conponents
+
+.button
+  +button
+  border-radius: $global-radius
+  display: inline-block
+  border: 1px solid $dimGray
+  padding: 8px 12px
+  font-weight: 500
+  transition: all 0.2s ease-out
+
+  &__success
+    background-image: linear-gradient(-180deg, #BCEC51 0%, #78B12C 100%)
+    color: $black
+    border: none
+
+  &__big
+    padding: rem(11px) rem(28px)
+    font-size: rem(21px)
+    font-weight: 400
+
+.icon
+	display: inline-block
+	width: 20px
+	height: 24px
+	background-position: center center
+	background-repeat: no-repeat
+	vertical-align: bottom
+
+	&--twitter
+		background-image: url(../assets/svg/twitter-icon.svg)
+		&-black
+			background-image: url(../assets/svg/twitter-icon--black.svg)
+
+	&--vk
+		background-image: url(../assets/svg/vk-icon.svg)
+		&-black
+			background-image: url(../assets/svg/vk-icon--black.svg)
+
+.logo
+	height: 27px
+	width: 187px
+	img
+		display: block
+
+.label
+	font-size: rem(12px)
+	padding: 2px 6px 5px 6px
+	display: inline-block
+	line-height: 1
+	vertical-align: middle
+	background-color: rgba(#A1A1A1, 0.3)
+	+radius(2px)
+
+.description
+	font-size: rem(13px)
+	line-height: rem(18px)
+	height: rem(118px)
+	opacity: 0.8
+
+.date
+  font-size: rem(13px)
+
+.number-ins
+  display: inline-block
+  position: relative
+  border-radius: $global-radius
+  overflow: hidden
+  color: $black
+  font-size: 0
+
+.inc,
+.dec
+  font-size: rem(21px)
+  display: inline-block
+  cursor: pointer
+  width: 24px
+  height: 35px
+  border: 0
+  vertical-align: middle
+  background: $white
+  text-align: center
+  margin: 0
+  padding: 0
+
+.ins-input
+  font-size: rem(21px)
+  border: 0
+  width: 33px
+  height: 35px
+  margin: 0
+  padding: 0 4px
+  box-sizing: border-box
+  vertical-align: middle
+  text-align: center
+  background-color: $gray
+
+.site-header
+  position: relative
+  min-height: rem(94px) // 60px height of header + 34px padding-bottom
+
+.nav
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  padding-top: rem(34px)
+  padding-bottom: $global-spacing
+  line-height: rem(27px)
+  font-size: rem(15px)
+
+  &__logo
+    flex: 1
+
+  &__items
+    flex: initial
+
+  &__link
+    display: inline-block
+
+    &:not(:first-of-type)
+      margin-left: 40px
+
+    &:hover,
+    &:focus
+      color: rgba($white, 0.8)
+
+.banner
+  background: $black
+  position: relative
+  overflow: hidden
+
+  &__image
+    position: relative
+    height: 624px
+    width: 100%
+    background-position: center 0
+    background-repeat: no-repeat
+
+  .grid
+    align-items: baseline
+
+  &__text
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    padding-top: rem(49px)
+    padding-bottom: rem(42px)
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)
+
+  &__headline
+    flex: auto
+
+  &__info
+    flex: auto
+    display: flex
+    justify-content: space-around
+
+  &__share
+    flex: auto
+    text-align: right
+
+    .icon:not(:first-of-type)
+        margin-left: 20px
+
+.content
+  padding-top: rem(48px)
+  padding-bottom: rem(48px)
+  &__box
+    padding-right: rem(48px)
+  &--fill
+    color: $black
+    background: $lightGray
+
+$ticket-border-color: $gray
+.ticket
+	+radius
+	height: 258px
+	max-width: 605px
+	border: 1px solid $ticket-border-color
+	background-color: $white
+	background-position: 0 0
+	background-repeat: no-repeat
+	display: flex
+	color: $black
+	&:not(:last-of-type)
+		margin-bottom: rem(16px)
+	&__content
+		padding: 16px 16px 16px 250px
+	&__info
+		line-height: rem(34px)
+		vertical-align: baseline
+	&__share
+		position: relative
+		border-left: 1px dashed #AFAFAF
+		padding: 16px
+		.icon
+			display: block
+			margin-bottom: 10px
+		&::before,
+    &::after
+      content: ''
+      position: absolute
+      left: -4px
+      width: 8px
+      height: 4px
+      z-index: 10
+      background: $lightGray
+    &::before
+      +radius(0 0 4px 4px)
+      top: -1px
+      border: 1px solid $ticket-border-color
+      border-top: none
+    &::after
+      +radius(4px 4px 0 0)
+      bottom: -1px
+      border: 1px solid $ticket-border-color
+      border-bottom: none
+	&__share-label
+		position: absolute
+		transform: rotate(270deg)
+		white-space: nowrap
+		line-height: 1
+		display: inline-block
+		left: -40%
+		bottom: 56px
+		font-size: rem(12px)
+	.label
+		margin-bottom: 11px
+	.h2
+		width: 266px
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+	.description
+		overflow: hidden
+	.button
+		float: right
+	&--white
+		color: $white
+
+		.icon--vk-black
+			background-image: url(../assets/svg/vk-icon.svg)
+
+		.icon--twitter-black
+			background-image: url(../assets/svg/twitter-icon.svg)
+
+.widget
+	&__title
+		font-weight: bold
+		font-size: rem(17px)
+		margin-bottom: rem(16px)
+
+.footer
+	padding-top: rem(16px)
+	padding-bottom: rem(18px)
+	font-size: rem(13px)
+	&__item
+		color: $gray
+	&__title
+		font-weight: bold
+		color: $white
+		font-size: rem(16px)
+
+.scheme
+  position: relative
+  width: 100%
+  font-size: rem(12px)
+  height: 636px
+
+
+.map, .section
+    width: 546px
+    height: 100%
+    position: relative
+    background-position: center 100%
+    background-repeat: no-repeat
+    margin: 0 auto
+
+.map
+  &__data
+    color: $dimGray
+
+    &--top-left
+      position: absolute
+      top: 0
+      left: 0
+    &--top-right
+      position: absolute
+      top: 0
+      right: 0
+
+  &__button
+    position: absolute
+    font-size: rem(13px)
+    position: relative
+    &:hover
+      background: rgba($white, 0.2)
+
+    &::after
+      position: absolute
+      content: attr(data-price)
+      font-size: rem(12px)
+      color: $dimGray
+      white-space: nowrap
+      text-align: center
+      bottom: -21px
+      left: 0
+      width: 100%
+
+    &--df
+      top: 380px
+      left: 219px
+      padding-left: rem(28px)
+      padding-right: rem(28px)
+
+.section
+
+.df-form
+  position: absolute
+  width: 254px
+  top: 366px
+  left: 0
+  right: 0
+  margin: 0 auto
+
+  
+
+.footnote
+  padding-top: rem(12px)
+  font-size: rem(12px)
+  color: $dimGray
+
+.table
+  &__label, &__item
+    white-space: nowrap
+  &__label
+    width: 70%
+  &__sum
+    font-size: rem(21px)
+
+  a
+    display: inline-block
+    color: $linkColor
+
+.event
+  .label
+    margin-bottom: rem(32px)
+
+  .description
+    height: auto
+    margin-bottom: rem(58px)
+
+  &__table
+    font-size: rem(13px)
+    line-height: rem(24px)
+    margin-bottom: rem(58px)
+
+  &__sum
+    td
+      padding-top: rem(58px)
+      vertical-align: baseline

@@ -1,0 +1,27 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+
+# soft & os
+.idea
+.DS_Store
+*.sublime-project
+
+# unnecessary files
+.zip
+.rar
+
+/server

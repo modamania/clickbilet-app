@@ -1,0 +1,164 @@
+@import grid-partials/defaults
+@import grid-partials/helper
+@import grid-partials/layout
+@import grid-partials/grid-modifiers
+@import grid-partials/item-modifiers
+
+// merge settings with default settings
+$grid-settings: () !default
+$grid-settings: map-merge($grid-default-settings, $grid-settings)
+
+// create default styles
++grid-base
+
+// create default widths
++grid-width
+
+// create grid gutters
++grid-gutter
+
+// create vertical grid gutters
+@if grid-option("vertical-gutters")
+  +grid-vertical-gutter
+
+// create left modifier
+@if grid-option-contain("grid-modifiers", "left")
+  +grid-left
+
+// create center grid-modifier
+@if grid-option-contain("grid-modifiers", "center")
+  +grid-center
+
+// create right grid-modifier
+@if grid-option-contain("grid-modifiers", "right")
+  +grid-right
+
+// create top grid-modifier
+@if grid-option-contain("grid-modifiers", "top")
+  +grid-top
+
+// create middle grid-modifier
+@if grid-option-contain("grid-modifiers", "middle")
+  +grid-middle
+
+// create bottom grid-modifier
+@if grid-option-contain("grid-modifiers", "bottom")
+  +grid-bottom
+
+// create forwards grid-modifier
+@if grid-option-contain("grid-modifiers", "forwards")
+  +grid-forwards
+
+// create backwards grid-modifier
+@if grid-option-contain("grid-modifiers", "backwards")
+  +grid-backwards
+
+// create between grid-modifier
+@if grid-option-contain("grid-modifiers", "between")
+  +grid-between
+
+// create around grid-modifier
+@if grid-option-contain("grid-modifiers", "around")
+  +grid-around
+
+// create equal grid-modifier
+@if grid-option-contain("grid-modifiers", "equal")
+  +grid-equal
+
+// create first item-modifier
+@if grid-option-contain("item-modifiers", "first")
+  +grid-first
+
+// create last item-modifier
+@if grid-option-contain("item-modifiers", "last")
+  +grid-last
+
+// create reset-order item-modifier
+@if grid-option-contain("item-modifiers", "reset-order")
+  +grid-reset-order
+
+// create push item-modifier
+@if grid-option-contain("item-modifiers", "push")
+  +grid-push
+
+// create pull item-modifier
+@if grid-option-contain("item-modifiers", "pull")
+  +grid-pull
+
+// create stuff based on breakpoints
+@each $breakpoint-name, $breakpoint-condition in grid-option("breakpoints")
+  @media #{$breakpoint-condition}
+    // create widths
+    +grid-width($breakpoint-name)
+
+    // create grid gutters
+    @if grid-option("gutter-breakpoints")
+      +grid-gutter($breakpoint-name)
+
+    // create vertical grid gutters
+    @if grid-option("gutter-breakpoints") and grid-option("vertical-gutters")
+      +grid-vertical-gutter($breakpoint-name)
+
+    // create left grid-modifier
+    @if grid-option-contain("grid-modifiers", "left") and grid-option("grid-modifier-breakpoints")
+      +grid-left($breakpoint-name)
+
+    // create center grid-modifier
+    @if grid-option-contain("grid-modifiers", "center") and grid-option("grid-modifier-breakpoints")
+      +grid-center($breakpoint-name)
+
+    // create right grid-modifier
+    @if grid-option-contain("grid-modifiers", "right") and grid-option("grid-modifier-breakpoints")
+      +grid-right($breakpoint-name)
+
+    // create top grid-modifier
+    @if grid-option-contain("grid-modifiers", "top") and grid-option("grid-modifier-breakpoints")
+      +grid-top($breakpoint-name)
+
+    // create middle grid-modifier
+    @if grid-option-contain("grid-modifiers", "middle") and grid-option("grid-modifier-breakpoints")
+      +grid-middle($breakpoint-name)
+
+    // create bottom grid-modifier
+    @if grid-option-contain("grid-modifiers", "bottom") and grid-option("grid-modifier-breakpoints")
+      +grid-bottom($breakpoint-name)
+
+    // create forwards grid-modifier
+    @if grid-option-contain("grid-modifiers", "forwards") and grid-option("grid-modifier-breakpoints")
+      +grid-forwards($breakpoint-name)
+
+    // create backwards grid-modifier
+    @if grid-option-contain("grid-modifiers", "backwards") and grid-option("grid-modifier-breakpoints")
+      +grid-backwards($breakpoint-name)
+
+    // create between grid-modifier
+    @if grid-option-contain("grid-modifiers", "between") and grid-option("grid-modifier-breakpoints")
+      +grid-between($breakpoint-name)
+
+    // create around grid-modifier
+    @if grid-option-contain("grid-modifiers", "around") and grid-option("grid-modifier-breakpoints")
+      +grid-around($breakpoint-name)
+
+    // create equal grid-modifier
+    @if grid-option-contain("grid-modifiers", "equal") and grid-option("grid-modifier-breakpoints")
+      +grid-equal($breakpoint-name)
+
+    // create first grid-modifier
+    @if grid-option-contain("item-modifiers", "first") and grid-option("item-modifier-breakpoints")
+      +grid-first($breakpoint-name)
+
+    // create last grid-modifier
+    @if grid-option-contain("item-modifiers", "last") and grid-option("item-modifier-breakpoints")
+      +grid-last($breakpoint-name)
+
+    // create reset-order grid-modifier
+    @if grid-option-contain("item-modifiers", "reset-order") and grid-option("item-modifier-breakpoints")
+      +grid-reset-order($breakpoint-name)
+
+    // create push item-modifier
+    @if grid-option-contain("item-modifiers", "push") and grid-option("item-modifier-breakpoints")
+      +grid-push($breakpoint-name)
+
+    // create pull item-modifier
+    @if grid-option-contain("item-modifiers", "pull") and grid-option("item-modifier-breakpoints")
+      +grid-pull($breakpoint-name)

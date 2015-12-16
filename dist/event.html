@@ -1,0 +1,106 @@
+
+<!-- all tickets variant-->
+<!-- all widget in here--><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>КликБилет | Билеты на мероприятия</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Онлайн продажа билетов на концерты во Владивостоке">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="http://vk.com/js/api/openapi.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav role="navigation" class="nav">
+        <div class="wrapper">
+          <div data-grid="none" class="grid">
+            <div class="nav__logo"><a href="index.html" class="logo"><img src="assets/svg/clickbilet_logo.svg" alt="КликБилет"></a></div>
+            <div class="nav__items"><a href="1" class="nav__link">Частые вопросы	</a><a href="2" class="nav__link">Оферта	</a><a href="3" class="nav__link">Контакты</a></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="wrapper">
+        <div data-grid="" class="grid">
+          <div data-grid="7/12" class="grid__item">
+            <div class="scheme">
+              <div style="background-image: url(assets/images/fetisov-map.png)" class="map hidden">
+                <button data-price="2000 ₽" class="button map__button map__button--df">Танцпол</button>
+              </div>
+              <div class="map__data map__data--top-left">
+                <div class="js-map-name">Фетисов Арена</div>
+                <div class="js-map-view">Секции</div>
+              </div>
+              <div class="map__data map__data--top-right">
+                <div>*Доступно сейкий: 1</div>
+              </div>
+              <div style="background-image: url(assets/images/fetisov-map-section-df.png)" class="section">
+                <div class="df-form">
+                  <table class="table">
+                    <tdbody>
+                      <tr class="df-form__price">
+                        <td>Стоимость билета</td>
+                        <td class="right">2000 ₽</td>
+                      </tr>
+                      <tr class="dr-form__ticket-numbers">
+                        <td>Количество билетов</td>
+                        <td class="right"><span class="number-ins"><span class="dec">-</span>
+                            <input type="text" value="1" class="ins-input"><span class="inc">+</span></span></td>
+                      </tr>
+                    </tdbody>
+                  </table>
+                </div>
+              </div>
+              <div class="footnote center">* &mdash; Кликбилет.рф продает выделенные организатором места.<br>Укажите желаемую секцию, затем выберите место или количество билетов</div>
+            </div>
+          </div>
+          <div data-grid="4/12 push--1/12" class="grid__item">
+            <div class="event"><span class="label">Концерт</span>
+              <h2 class="h2">Shakira</h2>
+              <div class="description">Можно добавить краткое описание мероприяния. Можно и не добавлять. Это не сломает подачу</div>
+              <table class="table event__table">
+                <tdbody>
+                  <tr>
+                    <td class="table__label">Дата</td>
+                    <td class="table__item">28 Декабря, 2015</td>
+                  </tr>
+                  <tr>
+                    <td class="table__label">Время</td>
+                    <td class="table__item">18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="table__label">Место</td>
+                    <td class="table__item">Фетисов Арена, ул.&nbsp;Маковского, 284</td>
+                  </tr>
+                  <tr>
+                    <td class="table__label">Аудитория</td>
+                    <td class="table__item">12+</td>
+                  </tr>
+                  <tr class="event__sum">
+                    <td class="table__label">Cумма</td>
+                    <td class="table__sum">0 руб.</td>
+                  </tr>
+                </tdbody>
+              </table>
+              <div class="checkout">
+                <button disabled class="button__success button__big">Оплатить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="wrapper">
+        <div class="footer__item"><a href="#" class="footer__title">КликБлиет </a></div>
+        <div class="footer__item">Продажа билетов онлайн. &copy; 2015</div>
+      </div>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

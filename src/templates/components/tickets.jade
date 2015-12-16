@@ -1,0 +1,16 @@
+// all tickets variant
+mixin ticket(headline, description)
+	section.ticket(class!=attributes.class, style!=attributes.style)
+		a(href='event.html')
+			.ticket__content
+				span.label Концерт
+				h2.h2= headline
+				.description= description
+				.ticket__info
+					span.date 28 Декабря, 21:00
+					span.pseudo.button.button--simple.button--black 2000 ₽
+		.ticket__share
+			.icon.icon--twitter-black
+			.icon.icon--vk-black
+			.ticket__share-label Позвать друзей
+	

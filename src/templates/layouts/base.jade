@@ -1,0 +1,20 @@
+include ../components/tickets.jade
+include ../components/vkwidgets.jade
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		title КликБилет | Билеты на мероприятия
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description" content="Онлайн продажа билетов на концерты во Владивостоке")
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" href="css/vendor.css")
+		link(rel="stylesheet" href="css/main.css")
+		script(src="http://vk.com/js/api/openapi.js")
+	body
+		block body
+			block header
+			block page
+			include ../components/footer.jade
+		script(src="js/vendor.js")
+		script(src="js/main.js")
