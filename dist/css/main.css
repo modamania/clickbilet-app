@@ -1709,7 +1709,7 @@ table {
 .ticket {
   border-radius: 3px;
   height: 258px;
-  max-width: 605px;
+  width: 605px;
   border: 1px solid #CDCDCD;
   background-color: #FFFFFF;
   background-position: 0 0;
@@ -1731,53 +1731,6 @@ table {
 .ticket__info {
   line-height: 2.125rem;
   vertical-align: baseline;
-}
-
-.ticket__share {
-  position: relative;
-  border-left: 1px dashed #AFAFAF;
-  padding: 16px;
-}
-
-.ticket__share .icon {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.ticket__share::before::after {
-  content: '';
-  position: absolute;
-  left: -4px;
-  width: 8px;
-  height: 4px;
-  z-index: 10;
-  background: #F2F2F2;
-}
-
-.ticket__share::before::before {
-  border-radius: 0 0 4px 4px;
-  top: -1px;
-  border: 1px solid #CDCDCD;
-  border-top: none;
-}
-
-.ticket__share::before::after {
-  border-radius: 4px 4px 0 0;
-  bottom: -1px;
-  border: 1px solid #CDCDCD;
-  border-bottom: none;
-}
-
-.ticket__share-label {
-  position: absolute;
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
-  white-space: nowrap;
-  line-height: 1;
-  display: inline-block;
-  left: -40%;
-  bottom: 56px;
-  font-size: 0.75rem;
 }
 
 .ticket .label {
@@ -1803,12 +1756,56 @@ table {
   color: #FFFFFF;
 }
 
-.ticket--white .icon--vk-black {
-  background-image: url(../assets/svg/vk-icon.svg);
+.stub {
+  position: relative;
+  border-left: 1px dashed #AFAFAF;
+  -webkit-flex: 0 0 52px;
+      -ms-flex: 0 0 52px;
+          flex: 0 0 52px;
 }
 
-.ticket--white .icon--twitter-black {
-  background-image: url(../assets/svg/twitter-icon.svg);
+.stub::before, .stub::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  width: 8px;
+  height: 4px;
+  z-index: 10;
+  background: #F2F2F2;
+}
+
+.stub::before {
+  border-radius: 0 0 4px 4px;
+  top: -1px;
+  border: 1px solid #CDCDCD;
+  border-top: none;
+}
+
+.stub::after {
+  border-radius: 4px 4px 0 0;
+  bottom: -1px;
+  border: 1px solid #CDCDCD;
+  border-bottom: none;
+}
+
+.stub__text {
+  width: 258px;
+  height: 0;
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1;
+  top: 0;
+  left: -230%;
+  -webkit-transform: rotate(-90deg) translateX(-50%);
+          transform: rotate(-90deg) translateX(-50%);
+  font-size: 0.75rem;
+}
+
+.stub__val {
+  font-size: 1.1875rem;
+  font-weight: 500;
+  margin-left: 6px;
 }
 
 .widget__title {
@@ -1838,44 +1835,36 @@ table {
   width: 100%;
   font-size: 0.75rem;
   height: 636px;
+  margin-bottom: 4.5625rem;
 }
 
-.map, .section {
-  width: 546px;
-  height: 100%;
-  position: relative;
-  background-position: center 100%;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-}
-
-.map__data {
+.scheme__data {
   color: #979797;
 }
 
-.map__data--top-left {
+.scheme__data--top-left {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.map__data--top-right {
+.scheme__data--top-right {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.map__button {
+.scheme__button {
   position: absolute;
   font-size: 0.8125rem;
   position: relative;
 }
 
-.map__button:hover {
+.scheme__button:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.map__button::after {
+.scheme__button::after {
   position: absolute;
   content: attr(data-price);
   font-size: 0.75rem;
@@ -1887,20 +1876,34 @@ table {
   width: 100%;
 }
 
-.map__button--df {
+.scheme__button--df {
   top: 380px;
   left: 219px;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
 
+.map, .section {
+  width: 546px;
+  height: 100%;
+  position: relative;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
 .df-form {
   position: absolute;
   width: 254px;
-  top: 366px;
+  top: 348px;
   left: 0;
   right: 0;
   margin: 0 auto;
+  font-size: 0.8125rem;
+}
+
+.df-form__price td {
+  padding-bottom: 0.75rem;
 }
 
 .footnote {

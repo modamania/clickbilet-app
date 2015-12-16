@@ -54,7 +54,9 @@ gulp.task('jade', () => {
 gulp.task('sass', () => {
 	return gulp.src(path.sass)
 		.pipe(plumber())
-		.pipe(sass({ outputStyle: 'expanded' })
+		.pipe(sass({
+			outputStyle: 'expanded'
+		})
 		.on('error', sass.logError))
 		.pipe(autoprefixer({ browsers: compatibility }))
 		.pipe(gulp.dest('dist/css'))
@@ -77,8 +79,8 @@ gulp.task('images', () => {
 			optimizationLevel: 7,
 			progressive: true,
 			interlaced: true,
-        multipass: true,
-        svgoPlugins: [{ removeViewBox: true }]
+      multipass: true,
+      svgoPlugins: [{ removeViewBox: true }]
 		})))
 		.pipe(gulp.dest('dist/assets/images'))
 		.pipe(connect.reload())
