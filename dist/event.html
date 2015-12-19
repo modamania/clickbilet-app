@@ -28,17 +28,15 @@
         <div data-grid="" class="grid">
           <div data-grid="7/12" class="grid__item">
             <div class="scheme">
-              <div style="background-image: url(assets/images/fetisov-map.png)" class="map hidden">
-                <button data-price="2000 ₽" class="button map__button map__button--df">Танцпол</button>
-              </div>
+              <div style="background-image: url(assets/images/fetisov-map.png)" class="map"><span data-tooltip-price="2000 ₽" rel="123" class="button map__button map__button--df js-section-select">Танцпол</span></div>
               <div class="scheme__data scheme__data--top-left">
                 <div class="js-scheme-name">Фетисов Арена</div>
                 <div class="js-scheme-view">Секции</div>
               </div>
               <div class="scheme__data scheme__data--top-right">
-                <div>*Доступно секций: 1</div>
+                <div>*Доступно секций: 1	</div>
               </div>
-              <div style="background-image: url(assets/images/fetisov-map-section-df.png)" class="section">
+              <div data-section-id="123" data-section-price="2000" style="background-image: url(assets/images/fetisov-map-section-df.png)" class="section hidden">
                 <div class="df-form">
                   <table class="table">
                     <tdbody>
@@ -48,15 +46,17 @@
                       </tr>
                       <tr class="df-form__ticket-numbers">
                         <td>Количество билетов</td>
-                        <td class="right"><span class="number-ins"><span class="dec">-</span>
-                            <input type="text" value="1" class="ins-input"><span class="inc">+</span></span></td>
+                        <td class="right">
+                          <!-- control elem		--><span class="number-ins js-num-ins"><span data-control="dec" class="dec js-ins-control">-</span>
+                            <input type="text" value="1" class="ins-input js-ins-input"><span data-control="inc" class="inc js-ins-control">+</span></span>
+                        </td>
                       </tr>
                     </tdbody>
                   </table>
                 </div>
               </div>
-              <div class="footnote center">* &mdash; Кликбилет.рф продает выделенные организатором места.<br>Укажите желаемую секцию, затем выберите место или количество билетов</div>
             </div>
+            <div class="footnote center">* &mdash; Кликбилет.рф продает выделенные организатором места.<br>Укажите желаемую секцию, затем выберите место или количество билетов</div>
           </div>
           <div data-grid="4/12 push--1/12" class="grid__item">
             <div class="event"><span class="label">Концерт</span>
@@ -82,13 +82,20 @@
                   </tr>
                   <tr class="event__sum">
                     <td class="table__label">Cумма</td>
-                    <td class="table__sum">0 руб.</td>
+                    <td class="table__sum"> <span class="js-sum-output">0</span> руб.</td>
                   </tr>
                 </tdbody>
               </table>
-              <div class="checkout">
-                <button disabled class="button__success button__big">Оплатить</button>
-              </div>
+              <form action="" class="checkout js-checkout-form">
+                <button type="button" role="button" disabled class="button__success button__big js-form-submit">Оплатить</button>
+                <div class="hidden">
+                  <input type="hidden" name="Merchant_ID" value="853229">
+                  <input type="hidden" name="OrderNumber" value="" class="js-order-number">
+                  <input type="hidden" name="OrderAmount" value="" class="js-order-amount">
+                  <input type="hidden" name="url_return_OK" value="" class="js-res-ok">
+                  <input type="hidden" name="url_return_NO" value="" class="js-res-no">
+                </div>
+              </form>
             </div>
           </div>
         </div>

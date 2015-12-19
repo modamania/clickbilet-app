@@ -1491,6 +1491,7 @@ table {
   padding: 8px 12px;
   font-weight: 500;
   transition: all 0.2s ease-out;
+  cursor: pointer;
 }
 
 .button__success {
@@ -1528,6 +1529,18 @@ table {
 
 .icon--vk-black {
   background-image: url(../assets/svg/vk-icon--black.svg);
+}
+
+.table__label, .table__item {
+  white-space: nowrap;
+}
+
+.table__label {
+  width: 70%;
+}
+
+.table__sum {
+  font-size: 1.3125rem;
 }
 
 .logo {
@@ -1840,7 +1853,6 @@ table {
   width: 100%;
   font-size: 0.75rem;
   height: 636px;
-  margin-bottom: 4.5625rem;
 }
 
 .scheme__data {
@@ -1859,19 +1871,29 @@ table {
   right: 0;
 }
 
-.scheme__button {
+.map,
+.section {
+  width: 546px;
+  height: 100%;
+  position: relative;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.map__button {
   position: absolute;
   font-size: 0.8125rem;
   position: relative;
 }
 
-.scheme__button:hover {
+.map__button:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.scheme__button::after {
+.map__button::after {
   position: absolute;
-  content: attr(data-price);
+  content: attr(data-tooltip-price);
   font-size: 0.75rem;
   color: #979797;
   white-space: nowrap;
@@ -1881,20 +1903,11 @@ table {
   width: 100%;
 }
 
-.scheme__button--df {
+.map__button--df {
   top: 380px;
   left: 219px;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
-}
-
-.map, .section {
-  width: 546px;
-  height: 100%;
-  position: relative;
-  background-position: center 100%;
-  background-repeat: no-repeat;
-  margin: 0 auto;
 }
 
 .df-form {
@@ -1917,23 +1930,6 @@ table {
   color: #979797;
 }
 
-.table__label, .table__item {
-  white-space: nowrap;
-}
-
-.table__label {
-  width: 70%;
-}
-
-.table__sum {
-  font-size: 1.3125rem;
-}
-
-.table a {
-  display: inline-block;
-  color: #00BFFF;
-}
-
 .event .label {
   margin-bottom: 2rem;
 }
@@ -1952,4 +1948,8 @@ table {
 .event__sum td {
   padding-top: 3.625rem;
   vertical-align: baseline;
+}
+
+.js-form-submit {
+  transition: opacity 0.3s ease-out;
 }

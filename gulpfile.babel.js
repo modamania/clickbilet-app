@@ -79,8 +79,8 @@ gulp.task('images', () => {
 			optimizationLevel: 7,
 			progressive: true,
 			interlaced: true,
-      multipass: true,
-      svgoPlugins: [{ removeViewBox: true }]
+      		multipass: true,
+      		svgoPlugins: [{ removeViewBox: true }]
 		})))
 		.pipe(gulp.dest('dist/assets/images'))
 		.pipe(connect.reload())

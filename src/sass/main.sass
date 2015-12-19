@@ -219,6 +219,7 @@ table
 	padding: 8px 12px
 	font-weight: 500
 	transition: all 0.2s ease-out
+	cursor: pointer
 
 	&__success
 		background-image: linear-gradient(-180deg, #BCEC51 0%, #78B12C 100%)
@@ -247,6 +248,14 @@ table
 		background-image: url(../assets/svg/vk-icon.svg)
 		&-black
 			background-image: url(../assets/svg/vk-icon--black.svg)
+
+.table
+	&__label, &__item
+		white-space: nowrap
+	&__label
+		width: 70%
+	&__sum
+		font-size: rem(21px)
 
 .logo
 	height: 27px
@@ -496,7 +505,6 @@ $ticket-border-color: $gray
 	width: 100%
 	font-size: rem(12px)
 	height: 636px
-	margin-bottom: rem(73px)
 
 	&__data
 		color: $dimGray
@@ -510,16 +518,27 @@ $ticket-border-color: $gray
 			top: 0
 			right: 0
 
+.map,
+.section
+	width: 546px
+	height: 100%
+	position: relative
+	background-position: center 100%
+	background-repeat: no-repeat
+	margin: 0 auto
+
+.map
 	&__button
 		position: absolute
 		font-size: rem(13px)
 		position: relative
+
 		&:hover
 			background: rgba($white, 0.2)
 
 		&::after
 			position: absolute
-			content: attr(data-price)
+			content: attr(data-tooltip-price)
 			font-size: rem(12px)
 			color: $dimGray
 			white-space: nowrap
@@ -533,15 +552,6 @@ $ticket-border-color: $gray
 			left: 219px
 			padding-left: rem(28px)
 			padding-right: rem(28px)
-
-
-.map, .section
-		width: 546px
-		height: 100%
-		position: relative
-		background-position: center 100%
-		background-repeat: no-repeat
-		margin: 0 auto
 
 
 .df-form
@@ -562,18 +572,6 @@ $ticket-border-color: $gray
 	font-size: rem(12px)
 	color: $dimGray
 
-.table
-	&__label, &__item
-		white-space: nowrap
-	&__label
-		width: 70%
-	&__sum
-		font-size: rem(21px)
-
-	a
-		display: inline-block
-		color: $linkColor
-
 .event
 	.label
 		margin-bottom: rem(32px)
@@ -591,3 +589,8 @@ $ticket-border-color: $gray
 		td
 			padding-top: rem(58px)
 			vertical-align: baseline
+
+
+// Sexy animations
+.js-form-submit
+	transition: opacity 0.3s ease-out

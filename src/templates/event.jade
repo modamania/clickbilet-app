@@ -3,20 +3,19 @@ block header
 	header.site-header
 		include components/nav.jade
 block page
-	div.content
+	.content
 		.wrapper
 			.grid(data-grid='')
 				.grid__item(data-grid='7/12')
 					.scheme
-						.map.hidden(style='background-image: url(assets/images/fetisov-map.png)')
-							button.button.map__button.map__button--df(data-price='2000 ₽') Танцпол
+						.map(style='background-image: url(assets/images/fetisov-map.png)')
+							span.button.map__button.map__button--df.js-section-select(data-tooltip-price='2000 ₽' rel='123') Танцпол
 						.scheme__data.scheme__data--top-left
 							div.js-scheme-name Фетисов Арена
 							div.js-scheme-view Секции
 						.scheme__data.scheme__data--top-right
-							div *Доступно секций: 1
-						
-						.section(style='background-image: url(assets/images/fetisov-map-section-df.png)')
+							div *Доступно секций: 1	
+						.section.hidden(data-section-id='123' data-section-price='2000' style='background-image: url(assets/images/fetisov-map-section-df.png)')
 							.df-form
 								table.table
 									tdbody
@@ -26,12 +25,14 @@ block page
 										tr.df-form__ticket-numbers
 											td Количество билетов
 											td.right
-												span.number-ins
-													span.dec -
-													input.ins-input(type='text' value='1')
-													span.inc +
+												// control elem		
+												span.number-ins.js-num-ins
+													span.dec.js-ins-control(data-control='dec') -
+													input.ins-input.js-ins-input(type='text' value='1')
+													span.inc.js-ins-control(data-control='inc') +
+													
+					.footnote.center * &mdash; Кликбилет.рф продает выделенные организатором места.<br>Укажите желаемую секцию, затем выберите место или количество билетов
 				
-						.footnote.center * &mdash; Кликбилет.рф продает выделенные организатором места.<br>Укажите желаемую секцию, затем выберите место или количество билетов
 				.grid__item(data-grid='4/12 push--1/12')
 					.event
 						span.label Концерт
@@ -53,7 +54,15 @@ block page
 									td.table__item 12+
 								tr.event__sum
 									td.table__label Cумма
-									td.table__sum 0 руб.
-						.checkout
-							button.button__success.button__big(disabled) Оплатить
-							
+									td.table__sum 
+										span.js-sum-output 0
+										|  руб.
+						
+						form.checkout.js-checkout-form(action='')
+							button.button__success.button__big.js-form-submit(type='button' role='button' disabled) Оплатить
+							.hidden
+								input(type="hidden" name="Merchant_ID" value="853229")
+								input.js-order-number(type="hidden" name="OrderNumber" value="")
+								input.js-order-amount(type="hidden" name="OrderAmount" value="")
+								input.js-res-ok(type="hidden" name="url_return_OK" value="")
+								input.js-res-no(type="hidden" name="url_return_NO" value="")
