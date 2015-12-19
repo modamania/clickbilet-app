@@ -14,7 +14,8 @@ block page
 							div.js-scheme-name Фетисов Арена
 							div.js-scheme-view Секции
 						.scheme__data.scheme__data--top-right
-							div *Доступно секций: 1	
+							div *Доступно секций:
+								span.js-scheme-free 1	
 						.section.hidden(data-section-id='123' data-section-price='2000' style='background-image: url(assets/images/fetisov-map-section-df.png)')
 							.df-form
 								table.table
@@ -36,7 +37,7 @@ block page
 				.grid__item(data-grid='4/12 push--1/12')
 					.event
 						span.label Концерт
-						h2.h2 Shakira
+						h1.h1 Shakira
 						.description Можно добавить краткое описание мероприяния. Можно и не добавлять. Это не сломает подачу
 						table.table.event__table
 							tdbody
@@ -66,3 +67,11 @@ block page
 								input.js-order-amount(type="hidden" name="OrderAmount" value="")
 								input.js-res-ok(type="hidden" name="url_return_OK" value="")
 								input.js-res-no(type="hidden" name="url_return_NO" value="")
+						
+						.paysevice
+							.footnote Оплатить электронные билеты можно картами, через телефон и платежные системы
+							.payservice__logo
+								span
+									small Провайдер электронных платежей:
+								a(href='http://www.assist.ru')
+									img(src="assets/svg/assist_logo.svg", alt="Система электронных платежей")

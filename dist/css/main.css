@@ -1328,6 +1328,10 @@
   border: 1px solid aqua;
 }
 
+.h1 {
+  margin-bottom: 0.5rem;
+}
+
 .h2 {
   font-size: 1.375rem;
   margin-bottom: 0.5rem;
@@ -1948,6 +1952,10 @@ table {
 .event__sum td {
   padding-top: 3.625rem;
   vertical-align: baseline;
+}
+
+.payservice__logo {
+  margin-top: 2.375rem;
 }
 
 .js-form-submit {
