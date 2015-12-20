@@ -11,7 +11,7 @@ import cache from 'gulp-cache';
 import plumber from 'gulp-plumber';
 import size from 'gulp-size';
 import babel from 'gulp-babel';
-import del from 'del';
+import rimraf from 'gulp-rimraf';
 import jade from 'gulp-jade';
 
 // Paths
@@ -121,7 +121,7 @@ gulp.task('jsVendor', () => {
 		.pipe(connect.reload());
 });
 
-gulp.task('clean', (cb) => del(['.tmp', 'dist/*'], {dot:true}));
+gulp.task('clean', (cb) => rimraf (['.tmp', 'dist/*'], cb));
 
 gulp.task('build', ['jade','sass','js','cssVendor','jsVendor','images','svg']);
 

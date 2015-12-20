@@ -11,7 +11,7 @@ mixin ticket(headline, description)
 		.stub
 			.stub__text Осталось билетов
 				span.stub__val 19
-	
+ 
 mixin payedTicket(headline)
 	article.ticket.ticket--payed
 		.ticket__content
@@ -35,6 +35,6 @@ mixin payedTicket(headline)
 				.payment__barcode
 					img(src="assets/images/barcode.jpg", alt="")
 				.payment__price
-					.payment__labelСтоимость
+					.payment__label Стоимость
 					.payment__val 2000 руб.
 		.stub
