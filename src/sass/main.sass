@@ -463,6 +463,29 @@ $ticket-border-color: $gray
 		// HACK: Perfecting with of td
 		width: 1px
 
+
+.payment
+	display: flex
+	justify-content: space-between
+
+	&__barcode
+		img
+			display: block
+
+	&__price
+		align-self: flex-end
+
+	&__label
+		font-size: rem(12px)
+		line-height: 1
+
+	&__val
+		font-size: rem(21px)
+		font-weight: 600
+
+
+
+
 .ticket--white
 	color: $white
 

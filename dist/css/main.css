@@ -1806,6 +1806,35 @@ table {
   width: 1px;
 }
 
+.payment {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.payment__barcode img {
+  display: block;
+}
+
+.payment__price {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+}
+
+.payment__label {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.payment__val {
+  font-size: 1.3125rem;
+  font-weight: 600;
+}
+
 .ticket--white {
   color: #FFFFFF;
 }

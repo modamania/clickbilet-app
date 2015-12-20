@@ -31,8 +31,10 @@ mixin payedTicket(headline)
 						td 28 Декабря
 						td 18:00
 						td Фетисов Арена, ул.Заголодная 12а
-						
-			.ticket__barcode
-				img(src="assets/images/barcode.jpg", alt="")
-				
+			.payment
+				.payment__barcode
+					img(src="assets/images/barcode.jpg", alt="")
+				.payment__price
+					.payment__labelСтоимость
+					.payment__val 2000 руб.
 		.stub
