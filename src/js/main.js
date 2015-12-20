@@ -36,7 +36,7 @@ let Scheme = {
 			let $price = this.$section.attr('data-section-price');
 			let $sum = $quantity * $price;
 
-			if(!isNaN($quantity)) {
+			if(!isNaN($quantity) && $quantity >= 1 ) {
 				$({countNum: $countStartFrom}).animate({countNum: $sum}, {
 					duration: 480,
 					easing: 'swing',
@@ -50,6 +50,7 @@ let Scheme = {
 				});
 			} else {
 				$(this.$quantityInput).val(1);
+				Scheme.calcPrice();
 			}
 		},
 		setNumIns() {

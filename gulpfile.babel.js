@@ -20,7 +20,7 @@ const path = {
 	js: 'src/js/**/*.js',
 	images: 'src/assets/images/**/*.{jpg,jpeg,png}',
 	svg: 'src/assets/svg/**/*.svg',
-	jade: 'src/templates/**/*.jade',
+	jade: 'src/templates/*.jade',
 	vendor: 'bower_components'
 };
 

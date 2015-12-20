@@ -1958,6 +1958,11 @@ table {
   margin-top: 2.375rem;
 }
 
+.payservice__logo span {
+  display: block;
+  margin-bottom: 4px;
+}
+
 .js-form-submit {
   transition: opacity 0.3s ease-out;
 }
