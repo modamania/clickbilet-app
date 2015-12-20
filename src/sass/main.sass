@@ -89,10 +89,11 @@ $linkColor: #00BFFF
 
 .h1
 	margin-bottom: rem(8px)
+	margin-bottom: rem(24px)
 
 .h2
 	font-size: rem(22px)
-	margin-bottom: rem(8px)
+	margin-bottom: rem(24px)
 
 // Defauls
 *,
@@ -121,7 +122,7 @@ img
 	height: auto
 	-ms-interpolation-mode: bicubic
 	display: inline-block
-	vertical-align: middle
+	veral-align: middle
 
 button
 	+button
@@ -188,7 +189,6 @@ a
 	img
 		border: 0
 
-
 table
 	width: 100%
 
@@ -210,6 +210,16 @@ table
 	text-align: right
 
 .hidden
+	display: none
+
+
+// Temp
+
+.global-margin
+	&--top
+		margin-top: $global-spacing
+
+.print__show
 	display: none
 
 // @Conponents
@@ -278,6 +288,7 @@ table
 .description
 	font-size: rem(13px)
 	line-height: rem(18px)
+	margin-bottom: rem(24px)
 	opacity: 0.8
 
 .date
@@ -400,6 +411,7 @@ table
 
 $ticket-border-color: $gray
 
+//TODO: Ticket shoud be componetns with abstr styles
 .ticket
 	+radius
 	height: 258px
@@ -415,6 +427,7 @@ $ticket-border-color: $gray
 		margin-bottom: rem(16px)
 
 	&__content
+		flex: 1
 		padding: 24px 16px 16px 250px
 
 	&__info
@@ -425,6 +438,7 @@ $ticket-border-color: $gray
 		margin-bottom: 11px
 
 	.h2
+		margin-bottom: 0
 		width: 266px
 		white-space: nowrap
 		overflow: hidden
@@ -433,12 +447,50 @@ $ticket-border-color: $gray
 	.description
 		overflow: hidden
 		height: rem(110px)
+		margin-bottom: 0
 
 	.button
 		float: right
 
+.ticket__table
+	margin-bottom: rem(16px)
+	thead
+		font-size: rem(12px)
+	tbody
+		font-size: rem(13px)
+		font-weight: 600
+	td
+		// HACK: Perfecting with of td
+		width: 1px
+
 .ticket--white
 	color: $white
+
+.ticket--payed
+	.ticket__content
+		flex: 1
+		padding: 16px
+
+	.ticket__title
+		display: flex
+		flex: 1
+		justify-content: space-between
+		font-size: rem(13px)
+		margin-bottom: rem(16px)
+
+	.h2
+		height: rem(52px)
+		width: 100%
+		white-space: normal
+		line-height: rem(26px)
+		margin-bottom: rem(16px)
+
+	.stub
+		background: url(../assets/images/service__ad--logo.png) no-repeat 46% center
+		flex: 0 0 72px
+		&::before,
+		&::after
+			background: $black
 
 .stub
 	position: relative
@@ -601,8 +653,31 @@ $ticket-border-color: $gray
 			display: block
 			margin-bottom: 4px
 
-
-
 // Sexy animations
 .js-form-submit
 	transition: opacity 0.3s ease-out
+
+// Print styles
+@media print
+
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line
+		// background: transparent !important
+		color: #000 !important
+		box-shadow: none !important
+		text-shadow: none !important
+
+	.instruction
+		display: none !important
+	.print__show
+		display: block !important
+
+	body
+		background: #ffffff
+
+	.site-header,
+	.footer
+		display: none

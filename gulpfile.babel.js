@@ -134,7 +134,7 @@ gulp.task('server', () => {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(path.jade, ['jade']);
+	gulp.watch('src/templates/**/*.jade', ['jade']);
 	gulp.watch(path.sass, ['sass']);
 	gulp.watch(path.js, ['js']);
 	gulp.watch(path.images, ['images']);

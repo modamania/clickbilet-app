@@ -1,0 +1,22 @@
+extends layouts/base
+block header
+	header.site-header
+		include components/nav.jade
+block page
+	.content
+		.wrapper
+			.grid(data-grid='')
+				.grid__item(data-grid='7/12')
+					h2.h2 Ваши билеты
+					+payedTicket('Название мероприятия')
+					+payedTicket('Название мероприятия в две строки, чтоб было видно что случиться')
+				.grid__item(data-grid='4/12 push--1/12')
+					.instruction
+						h2.h2 Как пользоваться? 
+						.description Электронные билеты необходимо показать на кассе. Для этого вы можете их распечатать на бумаге.
+						a.button.button__success.button__big(href="javascript:window.print()") Распечатать
+						p.global-margin--top Желаем приятного отдыха!
+					.print__show
+						h2.h2 Контактная информация 
+						p Телефон для справок: +7 955 255-55-5
+						p Адрес сайта: кликбилет.рф

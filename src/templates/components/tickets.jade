@@ -1,4 +1,3 @@
-// all tickets variant
 mixin ticket(headline, description)
 	article.ticket(class!=attributes.class, style!=attributes.style)
 		a(href='event.html')
@@ -13,3 +12,27 @@ mixin ticket(headline, description)
 			.stub__text Осталось билетов
 				span.stub__val 19
 	
+mixin payedTicket(headline)
+	article.ticket.ticket--payed
+		.ticket__content
+			.ticket__title
+				span Электронный билет
+				span Оплачено через 
+					strong www.assist.ru
+			h2.h2= headline
+			table.table.ticket__table
+				thead
+					tr
+						td Дата
+						td Время
+						td Место
+				tbody
+					tr
+						td 28 Декабря
+						td 18:00
+						td Фетисов Арена, ул.Заголодная 12а
+						
+			.ticket__barcode
+				img(src="assets/images/barcode.jpg", alt="")
+				
+		.stub

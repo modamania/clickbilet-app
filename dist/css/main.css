@@ -1330,11 +1330,12 @@
 
 .h1 {
   margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .h2 {
   font-size: 1.375rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 *,
@@ -1367,7 +1368,7 @@ img {
   height: auto;
   -ms-interpolation-mode: bicubic;
   display: inline-block;
-  vertical-align: middle;
+  veral-align: middle;
 }
 
 button {
@@ -1480,6 +1481,14 @@ table {
   display: none;
 }
 
+.global-margin--top {
+  margin-top: 1.5rem;
+}
+
+.print__show {
+  display: none;
+}
+
 .button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1569,6 +1578,7 @@ table {
 .description {
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  margin-bottom: 1.5rem;
   opacity: 0.8;
 }
 
@@ -1746,6 +1756,9 @@ table {
 }
 
 .ticket__content {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 24px 16px 16px 250px;
 }
 
@@ -1759,6 +1772,7 @@ table {
 }
 
 .ticket .h2 {
+  margin-bottom: 0;
   width: 266px;
   white-space: nowrap;
   overflow: hidden;
@@ -1768,14 +1782,72 @@ table {
 .ticket .description {
   overflow: hidden;
   height: 6.875rem;
+  margin-bottom: 0;
 }
 
 .ticket .button {
   float: right;
 }
 
+.ticket__table {
+  margin-bottom: 1rem;
+}
+
+.ticket__table thead {
+  font-size: 0.75rem;
+}
+
+.ticket__table tbody {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.ticket__table td {
+  width: 1px;
+}
+
 .ticket--white {
   color: #FFFFFF;
+}
+
+.ticket--payed .ticket__content {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 16px;
+}
+
+.ticket--payed .ticket__title {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8125rem;
+  margin-bottom: 1rem;
+}
+
+.ticket--payed .h2 {
+  height: 3.25rem;
+  width: 100%;
+  white-space: normal;
+  line-height: 1.625rem;
+  margin-bottom: 1rem;
+}
+
+.ticket--payed .stub {
+  background: url(../assets/images/service__ad--logo.png) no-repeat 46% center;
+  -webkit-flex: 0 0 72px;
+      -ms-flex: 0 0 72px;
+          flex: 0 0 72px;
+}
+
+.ticket--payed .stub::before, .ticket--payed .stub::after {
+  background: #000000;
 }
 
 .stub {
@@ -1965,4 +2037,29 @@ table {
 
 .js-form-submit {
   transition: opacity 0.3s ease-out;
+}
+
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .instruction {
+    display: none !important;
+  }
+  .print__show {
+    display: block !important;
+  }
+  body {
+    background: #ffffff;
+  }
+  .site-header,
+  .footer {
+    display: none;
+  }
 }
