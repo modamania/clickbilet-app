@@ -1,0 +1,21 @@
+extends layouts/base
+block header
+	header.site-header
+		include components/nav.jade
+block page
+	.content.content--fill
+		.wrapper
+			.grid(data-grid='')
+				.grid__item(data-grid='8/12')
+					.content__box
+						p: strong Общие сведения
+						p Поддержкой сервиса занимается ООО «КВАЙТ»
+						p По всем вопросам обращайтесь по телефону +7 914 327-80-87
+						p Юридический / Фактический адрес: 
+						p 690035, г. Владивосток, ул. Калинина, дом № 21, кв. 48
+						<br>
+						p: strong Реквизиты
+						p ИНН/КПП 2537114574/253701007
+						p ОГРН: 1152537002430
+				.grid__item(data-grid='4/12')
+					+vkwidget('Присоединяйся')

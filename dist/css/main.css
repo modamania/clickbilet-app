@@ -1338,6 +1338,11 @@
   margin-bottom: 1.5rem;
 }
 
+.h3 {
+  font-size: 1.1875rem;
+  margin-bottom: 1.5rem;
+}
+
 *,
 *:before,
 *:after {
@@ -1479,6 +1484,16 @@ table {
 
 .hidden {
   display: none;
+}
+
+.list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.list--nested {
+  margin-left: 0.75rem;
 }
 
 .global-margin--top {

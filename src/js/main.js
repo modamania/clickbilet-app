@@ -92,14 +92,14 @@ let Scheme = {
 			this.$submitButton.attr('disabled', 'disabled');
 		},
 		submitForm() {
-			this.$form.submit();
 			this.$submitButton.prop('disabled', false);
+			this.$form.submit();
 		},
 		ajaxForm() {
 			let dataApi = 'http://localhost:3000/order_info';
 			let reqMethod = 'get';
 			let data = {
-				section_id: this.$form.attr('data-section-id'),
+				section_id: this.$section.attr('data-section-id'),
 				quantity: this.$quantityInput.val()
 			};
 
