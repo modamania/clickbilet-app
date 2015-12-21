@@ -1,16 +1,16 @@
 mixin ticket(headline, description)
-	article.ticket(class!=attributes.class, style!=attributes.style)
-		a(href='event.html')
-			.ticket__content
-				span.label Концерт
-				h2.h2= headline
-				.description= description
-				.ticket__info
-					span.date 28 Декабря, 21:00
-					span.pseudo.button.button--simple.button--black 2000 ₽
-		.stub
-			.stub__text Осталось билетов
-				span.stub__val 19
+		article.ticket(class!=attributes.class, style!=attributes.style)
+			a(href='event.html')
+				.ticket__content
+					span.label Концерт
+					h2.h2= headline
+					.description= description
+					.ticket__info
+						span.date 28 Декабря, 21:00
+						span.pseudo.button.button--simple.button--black 2000 ₽
+			.stub
+				.stub__text Осталось билетов
+					span.stub__val 1921212
  
 mixin payedTicket(headline)
 	article.ticket.ticket--payed

@@ -430,8 +430,8 @@ $ticket-border-color: $gray
 	background-color: $white
 	background-position: 0 0
 	background-repeat: no-repeat
-	display: flex
 	color: $black
+	display: flex
 
 	&:not(:last-of-type)
 		margin-bottom: rem(16px)
@@ -458,6 +458,8 @@ $ticket-border-color: $gray
 		overflow: hidden
 		height: rem(110px)
 		margin-bottom: 0
+		//fix:
+		width: 280px
 
 	.button
 		float: right
@@ -487,7 +489,6 @@ $ticket-border-color: $gray
 			max-width: 100%
 			display: block
 
-
 	&__price
 		align-self: flex-end
 
@@ -498,8 +499,6 @@ $ticket-border-color: $gray
 	&__val
 		font-size: rem(21px)
 		font-weight: 600
-
-
 
 
 .ticket--white
@@ -566,7 +565,7 @@ $ticket-border-color: $gray
 		text-align: center
 		line-height: 1
 		top: 0
-		left: -230%
+		left: -224%
 		transform: rotate(-90deg) translateX(-50%)
 		font-size: rem(12px)
 
