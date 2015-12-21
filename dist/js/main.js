@@ -33,7 +33,7 @@ let Scheme = {
 	},
 	calcPrice() {
 		let $sumOutput = $('.js-sum-output');
-		let $quantity = this.$quantityInput.val();
+		let $quantity = Math.ceil(this.$quantityInput.val());
 		let $price = this.$section.attr('data-section-price');
 		let $sum = $quantity * $price;
 
