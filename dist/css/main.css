@@ -1442,7 +1442,7 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
   text-rendering: optimizeLegibility;
   margin-top: 0;
-  margin-bottom: 1.5rem/2;
+  margin-bottom: 1.5rem;
   line-height: 1.4;
 }
 
@@ -1484,16 +1484,6 @@ table {
 
 .hidden {
   display: none;
-}
-
-.list {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.list--nested {
-  margin-left: 0.75rem;
 }
 
 .global-margin--top {
@@ -2085,6 +2075,28 @@ table {
 .payservice__logo span {
   display: block;
   margin-bottom: 4px;
+}
+
+.article {
+  margin-bottom: 3.625rem;
+}
+
+.article ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.article ul + h3 {
+  margin-top: 2.25rem;
+}
+
+.article li {
+  margin-bottom: 0.75rem;
+}
+
+.article li ul {
+  margin-left: 0.75rem;
 }
 
 .js-form-submit {

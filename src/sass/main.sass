@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6
 	color: inherit
 	text-rendering: optimizeLegibility
 	margin-top: 0
-	margin-bottom: ( $global-spacing/2 )
+	margin-bottom: $global-spacing
 	line-height: 1.4
 
 a
@@ -215,13 +215,6 @@ table
 
 .hidden
 	display: none
-
-.list
-	list-style-type: none
-	margin-left: 0
-	padding-left: 0
-	&--nested
-		margin-left: rem(12px)
 
 // Temp
 
@@ -690,6 +683,22 @@ $ticket-border-color: $gray
 		span
 			display: block
 			margin-bottom: 4px
+
+
+// Arcticles
+.article
+	margin-bottom: rem(58px)
+	ul
+		list-style-type: none
+		margin-left: 0
+		padding-left: 0
+		+ h3
+			margin-top: rem(36px)
+	li
+		margin-bottom: rem(12px)
+	li ul
+		margin-left: rem(12px)
+
 
 // Sexy animations
 .js-form-submit
