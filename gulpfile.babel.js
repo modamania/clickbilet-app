@@ -149,5 +149,3 @@ gulp.task('watch', function() {
 });
 
 gulp.task('serve', ['clean', 'build', 'server', 'watch']);
-
-//TODO: Add ENV == pruduction

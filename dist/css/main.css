@@ -2099,6 +2099,11 @@ table {
   margin-left: 0.75rem;
 }
 
+.article img {
+  max-width: 100%;
+  margin-bottom: 2.4rem;
+}
+
 .js-form-submit {
   transition: opacity 0.3s ease-out;
 }
